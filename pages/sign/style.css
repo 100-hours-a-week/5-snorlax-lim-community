@@ -1,0 +1,34 @@
+.sign-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  /* background-color: aqua; */
+}
+
+.sign-profile-img {
+  border-radius: 50%;
+}
+
+.sign-input {
+  display: flex;
+  flex-direction: column;
+  width: 392px;
+}
+
+.sign-input-box {
+  width: 100%;
+}
+
+.sign-btn {
+  width: 100%;
+  height: 33px;
+  background-color: gray;
+  border-radius: 4px;
+}
+.back-btn {
+  position: absolute;
+  margin-left: 500px;
+}

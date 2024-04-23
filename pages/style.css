@@ -1,0 +1,16 @@
+.login-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 8vh;
+  text-align: center;
+  font-size: 32px;
+  border-bottom: 1px solid black;
+}
+
+span {
+  color: red;
+}
+button {
+  cursor: pointer;
+}

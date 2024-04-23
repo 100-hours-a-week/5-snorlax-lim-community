@@ -1,0 +1,43 @@
+.community-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  width: 40%;
+  height: 100%;
+  margin: 0 auto;
+  /* background-color: aqua; */
+}
+
+.welcome-ment {
+  width: 40%;
+  text-align: center;
+}
+
+.community-write-btn {
+  width: 138px;
+  height: 39px;
+  border-radius: 20px;
+  border: none;
+  background-color: #aca0eb;
+  color: white;
+  align-self: flex-end;
+}
+
+.community-list {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin-top: 20px;
+}
+
+.community-list-item {
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid #cccccc;
+  border-radius: 15px;
+  box-shadow: 25%;
+  padding: 17px 24px;
+  margin: 10px;
+  height: 169px;
+}

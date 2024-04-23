@@ -1,0 +1,131 @@
+.mypage-icon {
+  width: 6vh;
+  height: 6vh;
+  position: absolute;
+  right: 33%;
+  border-radius: 50%;
+}
+
+.detail-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.detail-box {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  height: 70vh;
+  justify-content: space-between;
+}
+
+.detail-box .info {
+  height: 15%;
+}
+
+.detail-box .writer {
+  display: flex;
+  justify-content: space-between;
+  height: 70%;
+  padding: 10px;
+}
+
+.detail-box .writer div {
+  align-self: center;
+}
+
+.detail-box-content {
+  height: 65%;
+}
+
+.detail-box-content .content {
+  overflow: scroll;
+}
+
+.detail-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  /* position: absolute; */
+}
+
+.detail-status > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 116px;
+  height: 80%;
+  background-color: #d9d9d9;
+  border-radius: 16px;
+  margin: 0 8px;
+}
+
+.detail-comment {
+  width: 35%;
+  height: 50vh;
+}
+
+.comment-box {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  position: relative;
+}
+.comment-write {
+  height: 70%;
+  border: 0;
+  border-bottom: 1px solid black;
+}
+
+.comment-box button {
+  position: absolute;
+  height: 20%;
+  left: 97%;
+  top: 95%;
+  transform: translate(-100%, -100%);
+}
+
+.comment-list {
+  height: 50%;
+  overflow: scroll;
+}
+
+.comment-item .info {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  padding: 10px;
+}
+
+.comment-item .info div {
+  align-self: center;
+}
+
+.comment-item button {
+  width: 30%;
+}
+
+.comment-item .comment-content {
+  margin-left: 8%;
+}
+
+.comment-box button {
+  width: 20%;
+}
+
+.back-btn {
+  position: absolute;
+  margin-left: 33%;
+}
+
+.horizontal-rule {
+  width: 100%;
+  border: 0.5px solid black;
+  background-color: black;
+  /* margin: 20px 0; */
+}

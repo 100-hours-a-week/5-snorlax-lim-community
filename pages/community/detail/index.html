@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../../style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <header class="login-header">
+      아무말 대 잔치
+      <div class="back-btn"><</div>
+      <img class="mypage-icon" src="../../../images/photo/photo_4.webp" />
+    </header>
+    <article id="detail-body" class="detail-body"></article>
+
+    <article class="login-article"></article>
+  </body>
+</html>
+
+<script>
+  let detail = {
+    id: localStorage.getItem("itemId"),
+    title: "제목" + localStorage.getItem("itemId"),
+    writer: {
+      id: 1,
+      profile: "aa",
+      name: "작성자",
+    },
+    image: "aaa",
+    content: "blabla",
+    state: {
+      views: 123,
+      comments: 123,
+    },
+    comments: [
+      { id: 1, date: "2000-01-01", content: "aaa" },
+      { id: 2, date: "2000-01-01", content: "aaa" },
+    ],
+  };
+  let detailBody = document.getElementById("detail-body");
+
+  const section = document.createElement("section");
+  section.classList.add("detail-box");
+
+  section.innerHTML = `
+  <div class="info">
+          <div>${detail.title}</div>
+
+          <div class="writer">
+            <div style="display: flex; width: 40%; justify-content: space-between;">
+              <img width="15%" style="border-radius: 50%;" src="../../../images/profile_img.webp">
+              <div>작성자</div>
+              <div>2000-00-00 11:11</div>
+            </div>
+            <div>
+              <button id="modify-btn">수정</button>
+              <button id="delete-btn">삭제</button>
+            </div>
+          </div>
+
+        </div>
+        <hr class="horizontal-rule"></hr>
+        <div class="detail-box-content">
+          <img width="100%" height="70%" src="../../../images/photo/photo_1.jpeg"/>
+          <div class="content" style="height: 30%;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi culpa laudantium quos necessitatibus molestiae sit assumenda exercitationem, eaque ab expedita rem placeat reprehenderit enim consequuntur iste saepe repellendus, deleniti molestias.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque rem dolore praesentium voluptas sit officiis minus quam voluptatum facilis facere nisi asperiores nostrum, exercitationem id, possimus dicta nihil odit rerum.
+          </div>
+        </div>
+
+        <div class="detail-status">
+          <div>
+            <div>123</div>
+            <div>조회수</div>
+          </div>
+          <div>
+            <div>123</div>
+            <div>댓글</div>
+          </div>
+        </div>
+    `;
+  // detailBody.innerHTML = "alije";
+  detailBody.append(section);
+  const commentSection = document.createElement("section");
+  commentSection.classList.add("detail-comment");
+
+  commentSection.innerHTML = `<div class="comment-box">
+          <textarea
+            class="comment-write"
+            placeholder="댓글을 입력하세요!"
+          ></textarea>
+          <button>댓글 등록</button>
+        </div>
+        <div id="comment-list" class="comment-list"></div>`;
+
+  detailBody.append(commentSection);
+
+  let commentList = document.getElementById("comment-list");
+
+  detail.comments.forEach((a) => {
+    let id = a.id;
+    let box = document.createElement("div");
+    box.classList.add("comment-item");
+    box.innerHTML += `
+            <div class="info">
+              <div
+                style="
+                  display: flex;
+                  width: 40%;
+                  justify-content: space-between;
+                "
+              >
+                <img
+                  width="15%"
+                  style="border-radius: 50%"
+                  src="../../../images/profile_img.webp"
+                />
+                <div>작성자</div>
+                <div>2000-00-00 11:11</div>
+              </div>
+              <div style="width: 40%">
+                <button id="modify-btn${id}">수정</button>
+                <button id="delete-btn${id}">삭제</button>
+              </div>
+            </div>
+
+            <div class="comment-content">댓글 내용</div>
+
+            `;
+
+    commentSection.append(box);
+
+    document.getElementById("modify-btn" + id).addEventListener("click", () => {
+      console.log("modify" + id);
+    });
+
+    document.getElementById("delete-btn" + id).addEventListener("click", () => {
+      Swal.fire({
+        title: "정말 삭제 하시겠습니까?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "확인",
+        cancelButtonText: "취소",
+        reverseButtons: true,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          //a.id 댓글 삭제
+          Swal.fire({ title: "삭제 되었습니다", icon: "success" });
+        }
+      });
+    });
+  });
+
+  document.getElementById("modify-btn").addEventListener("click", () => {
+    location.href = "../modify/index.html";
+  });
+
+  document.getElementById("delete-btn").addEventListener("click", () => {
+    Swal.fire({
+      title: "정말 삭제 하시겠습니까?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "확인",
+      cancelButtonText: "취소",
+      reverseButtons: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({ title: "삭제 되었습니다", icon: "success" });
+      }
+    });
+  });
+</script>
